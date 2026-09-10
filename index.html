@@ -3,71 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kedai Lutfan</title>
+    <title>Kedai Lutfan - Toko Online</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #4a2c2a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 14px;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4a2c2a;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 1100px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .title h2 {
+            color: #4a2c2a;
+            margin-bottom: 5px;
+        }
+
+        .title p {
+            color: #777;
+        }
+
+        /* PRODUK */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card h3 {
+            color: #4a2c2a;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #666;
+            font-size: 14px;
+            min-height: 45px;
+        }
+
+        .price {
+            color: #27ae60;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .btn-order {
+            display: block;
+            text-align: center;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .btn-order:hover {
+            background-color: #128c7e;
+        }
+
+        /* PESANAN */
+        .order-section {
+            background-color: white;
+            margin-top: 35px;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .order-section h2 {
+            color: #4a2c2a;
+            margin-bottom: 10px;
+        }
+
+        .order-section a {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        /* HP */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .card img {
+                height: 180px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
-        <h1>☕ Kedai Lutfan</h1>
-        <p>Kopi • Kelomang • Boti</p>
+        <h1>🛍️ Kedai Lutfan</h1>
+        <p>Toko Online Unik & Menarik</p>
     </header>
 
-    <hr>
-
+    <!-- NAVBAR -->
     <nav>
-        <a href="#kopi">☕ Kopi Robusta</a> |
-        <a href="#kelomang">🐚 Kelomang/Keong</a> |
-        <a href="#boti">💃 Boti</a> |
-        <a href="#pesanan">📞 Pesanan</a>
+        <a href="#produk">🏪 Produk</a>
+        <a href="#pesanan">📦 Pesanan</a>
+        <a href="#kontak">📞 Kontak</a>
     </nav>
 
-    <hr>
+    <!-- PRODUK -->
+    <div class="container" id="produk">
 
-    <h2>🍽️ Menu Kami</h2>
+        <div class="title">
+            <h2>✨ Produk Kami</h2>
+            <p>Pilih produk favoritmu dan pesan sekarang!</p>
+        </div>
 
-    <section id="kopi">
-        <h2>☕ Kopi Robusta</h2>
-        <p>Kopi robusta dengan aroma khas dan rasa yang nikmat.</p>
-        <p><b>Rp10.000</b></p>
-    </section>
+        <div class="menu-grid">
 
-    <hr>
+            <!-- KOPI -->
+            <div class="card">
+                <img src="kopi-robusta.jpg" alt="Kopi Robusta">
 
-    <section id="kelomang">
-        <h2>🐚 Kelomang / Keong</h2>
-        <p>Kelomang dan keong sebagai pilihan unik untuk kamu.</p>
-        <p><b>Rp15.000</b></p>
-    </section>
+                <div class="card-content">
+                    <h3>☕ Kopi Robusta</h3>
 
-    <hr>
+                    <p class="description">
+                        Kopi robusta dengan rasa kuat, mantap,
+                        dan aroma khas.
+                    </p>
 
-    <section id="boti">
-        <h2>💃 Boti</h2>
-        <p>👨‍🎤✨ Seseorang yang tampil dengan gaya feminin dan berdandan.</p>
-        <p><b>Rp20.000</b></p>
-    </section>
+                    <div class="price">
+                        Rp15.000
+                    </div>
 
-    <hr>
+                    <a href="https://wa.me/628155049930?text=Halo,%20saya%20ingin%20memesan%20Kopi%20Robusta"
+                       class="btn-order"
+                       target="_blank">
+                        🛒 Beli Sekarang
+                    </a>
+                </div>
+            </div>
 
-    <section id="pesanan">
-        <h2>📞 Pesan Sekarang</h2>
-        <p>Hubungi kami melalui WhatsApp:</p>
+            <!-- KELOMANG -->
+            <div class="card">
+                <img src="kelomang.jpg" alt="Kelomang">
 
-        <p>
-            <a href="https://wa.me/+628155049930">
-                📱 0815-5049-930
+                <div class="card-content">
+                    <h3>🐚 Kelomang / Keong</h3>
+
+                    <p class="description">
+                        Kelomang hias yang menarik dan cocok
+                        sebagai hewan peliharaan.
+                    </p>
+
+                    <div class="price">
+                        Rp10.000
+                    </div>
+
+                    <a href="https://wa.me/628155049930?text=Halo,%20saya%20ingin%20memesan%20Kelomang"
+                       class="btn-order"
+                       target="_blank">
+                        🛒 Beli Sekarang
+                    </a>
+                </div>
+            </div>
+
+            <!-- BOTI -->
+            <div class="card">
+                <img src="boti.jpg" alt="Boti">
+
+                <div class="card-content">
+                    <h3>💃 Boti</h3>
+
+                    <p class="description">
+                        Penampilan dengan gaya feminin dan
+                        dandanan yang unik.
+                    </p>
+
+                    <div class="price">
+                        Rp12.000
+                    </div>
+
+                    <a href="https://wa.me/628155049930?text=Halo,%20saya%20ingin%20memesan%20Boti"
+                       class="btn-order"
+                       target="_blank">
+                        🛒 Beli Sekarang
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PESANAN -->
+        <div class="order-section" id="pesanan">
+            <h2>📦 Mau Pesan?</h2>
+
+            <p>
+                Klik tombol di bawah untuk melakukan pemesanan
+                melalui WhatsApp.
+            </p>
+
+            <a href="https://wa.me/628155049930?text=Halo,%20saya%20ingin%20memesan%20produk"
+               target="_blank">
+                📱 Pesan Sekarang
             </a>
-        </p>
+        </div>
 
-        <p>Silakan tuliskan menu dan jumlah pesanan.</p>
-    </section>
+    </div>
 
-    <hr>
-
-    <footer>
-        <p>© Lutfan Fakhry Akbar. H | wenak wenak wenak</p>
+    <!-- FOOTER -->
+    <footer id="kontak">
+        <p>© 2026 Lutfan Fakhry Akbar. H</p>
+        <p>Terima kasih telah berbelanja! Wenak wenak wenak ❤️</p>
     </footer>
 
 </body>
-</html>
+    </html>
